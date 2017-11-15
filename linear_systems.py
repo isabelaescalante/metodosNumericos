@@ -42,6 +42,8 @@ def gauss_elimination(m_string):
     
     return resultado
 
+'''
 if __name__ == '__main__':
     m_string = "1 2 -1 3; 0 -3 7 2; 5 2 0 2"
     print(gauss_elimination(m_string))
+'''

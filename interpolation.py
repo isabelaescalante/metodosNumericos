@@ -15,9 +15,10 @@ def lagrange(x_array, y_array, x_int) :
 
     return y_int
 
-
+'''
 if __name__ == '__main__' :
     x = np.array([2, 3, 5])
     y = np.array([6, 19, 99])
     x_int = 4
     print(lagrange(x, y, x_int))
+'''

@@ -3,14 +3,7 @@ from __future__ import print_function
 import numpy as np
 
 def newton_divided_difference(x_array, y_array) :
-    """
-    Find the coefficients of Newton's divided difference and the Newton's polynomial
-    Inputs:
-            x: Array containing x values
-            y: Array containing y values
-    Outpus:
-            f: Array containing Newton's divided difference coefficients
-    """
+
     x = np.array(x_array)
     y = np.array(y_array)
 

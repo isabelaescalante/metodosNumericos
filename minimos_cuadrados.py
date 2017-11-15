@@ -25,10 +25,12 @@ def polinomial(x_array, y_array, n) :
 
     return resultado
     
-
+'''
 if __name__ == '__main__':
     x = np.array([1.2, 2.5, 3.3, 6.7, 4.5])
     y = np.array([2.5, 2.2, 3.4, 12.8, 7.2])
     #x = np.array([1, 2, 3, 4, 5])
     #y = np.array([1.25, 2.4, 3.6, 4.75, 5])
     print(exponencial(x,y))
+
+'''
