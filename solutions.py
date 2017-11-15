@@ -9,7 +9,7 @@ def biseccion(f_string, a, b, tol, iter_max) :
     fb = f(b)
     #print(f_string)
 
-    if fa * fb > 0:
+    #if fa * fb > 0:
         #raise Exception("Error: La funcion no cambia de signo al final.")
 
     delta_x = math.fabs(b - a) / 2
