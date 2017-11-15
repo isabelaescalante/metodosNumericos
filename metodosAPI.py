@@ -120,7 +120,7 @@ def newtonrap() :
         iterm = int(request.json['iterm'])
 
         result = newtonRapson(f, df, xcero, tol, iterm)
-        print result
+        #print result
 
     return jsonify({'result': result}), 201
 
