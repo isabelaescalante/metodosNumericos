@@ -64,11 +64,11 @@ def lagrangei() :
         y = request.json['y']
         x_int = float(request.json['xint'])
         x_array = map(float, x.split(','))
-        print x_array
+        #print x_array
         y_array = map(float, y.split(','))
-        print y_array
+        #print y_array
         result = lagrange(x_array,y_array, x_int)
-        print result
+        #print result
 
     return jsonify({'result': result}), 201
 
@@ -132,11 +132,11 @@ def aExponencial() :
         x = request.json['x']
         y = request.json['y']
         x_array = map(float, x.split(','))
-        print x_array
+        #print x_array
         y_array = map(float, y.split(','))
-        print y_array
+        #print y_array
         result = exponencial(x_array,y_array)
-        print result
+        #print result
 
     return jsonify({'result': result}), 201
 
@@ -149,15 +149,15 @@ def aPolinomial() :
         y = request.json['y']
         n = int(request.json['orden'])
         x_array = map(float, x.split(','))
-        print x_array
+        #print x_array
         y_array = map(float, y.split(','))
-        print y_array
+        #print y_array
         result = polinomial(x_array,y_array,n)
-        print result
+        #print result
 
     return jsonify({'result': result}), 201
 
 if __name__ == '__main__':
-    print flask.__version__
+    #print flask.__version__
     app.run(debug=True)
 
