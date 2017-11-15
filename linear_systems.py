@@ -20,8 +20,6 @@ def gauss_elimination(m_string):
             subl.append(float(num))
         m.append(subl)
 
-    print m
-
     # forward elimination
     n = len(m)
     for i in range(n):
