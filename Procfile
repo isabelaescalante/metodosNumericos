@@ -1,1 +1,1 @@
-worker: python metodosAPI.py
+web: gunicorn gettingstarted.wsgi —log-file-
