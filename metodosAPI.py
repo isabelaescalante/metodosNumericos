@@ -21,17 +21,17 @@ app = Flask(__name__)
 
 @app.route('/test', methods=['GET'])
 def test() :
-    print "ENTRO A TEST"
+    print ("ENTRO A TEST")
     return "hello world"
 
 @app.route('/arguments', methods=['POST'])
 def arguments() :
-    print "ENTRO A ARGUMENT"
+    print ("ENTRO A ARGUMENT")
     if not request.json:
-        print "RESULT CODE"
+        print ("RESULT CODE")
         result_code = 400
     else:      
-        print "000"  
+        print ("000")
         f = request.json['f']
         a = request.json['a']
         b = request.json['b']
