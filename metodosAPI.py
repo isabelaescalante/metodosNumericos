@@ -18,7 +18,7 @@ from minimos_cuadrados import exponencial, polinomial
 app = Flask(__name__)
 #CORS(app)
 
-'''
+
 @app.route('/test', methods=['GET'])
 def test() :
     print "ENTRO A TEST"
@@ -39,7 +39,7 @@ def arguments() :
         result = f+a+b+n
 
     return jsonify({'result': result}), 201
-'''
+
 
 
 @app.route('/simpsons', methods=['POST'])
