@@ -1,1 +1,1 @@
-web: python metodosAPI.py
+worker: python metodosAPI.py
