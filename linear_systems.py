@@ -10,15 +10,18 @@ def pivot(m, n, i):
     m[i], m[max_row] = m[max_row], m[i]
 
 def gauss_elimination(m_string):
+    m_string += ' '
     aSplit = m_string.split('; ')
 
     m = []
 
     for item in aSplit:
-        subl = []
-        for num in item.split():
-            subl.append(float(num))
-        m.append(subl)
+            subl = []
+            for num in item.split():
+                subl.append(float(num))
+            if (len(subl) != 0):
+                m.append(subl)
+
 
     # forward elimination
     n = len(m)
@@ -40,8 +43,8 @@ def gauss_elimination(m_string):
     
     return resultado
 
-'''
+
 if __name__ == '__main__':
     m_string = "1 2 -1 3; 0 -3 7 2; 5 2 0 2"
     print(gauss_elimination(m_string))
-'''
+
