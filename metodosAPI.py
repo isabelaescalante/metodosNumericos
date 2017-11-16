@@ -147,7 +147,7 @@ def aPolinomial() :
     else:
         x = request.json['x']
         y = request.json['y']
-        n = int(request.json['orden'])
+        n = float(request.json['orden'])
         x_array = map(float, x.split(','))
         #print x_array
         y_array = map(float, y.split(','))
