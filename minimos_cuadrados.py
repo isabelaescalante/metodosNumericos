@@ -3,10 +3,14 @@ import math
 from scipy.optimize import curve_fit
 
 def exponencial(x_array, y_array) :
-    #x = np.asarray(x_array).ravel()
-    #y = np.asarray(y_array).ravel()
-    x = np.array([1, 2, 3, 4, 5])
-    y = np.array([1.25, 2.4, 3.6, 4.75, 5])
+    x = np.empty((int(len(x_array))))
+    y = np.empty((int(len(y_array))))
+
+    for i in x_array :
+        x = np.append(x, [i])
+    
+    for j in y_array :
+        y = np.append(y, [j])
 
     popt, pcov = curve_fit(lambda t,a,b: a*np.exp(b*t),  x,  y)
 
@@ -15,12 +19,14 @@ def exponencial(x_array, y_array) :
     return string_result
 
 def polinomial(x_array, y_array, n) :
-    #x = np.asarray(x_array).ravel()
-    #y = np.asarray(y_array).ravel()
+    x = np.empty((int(len(x_array))))
+    y = np.empty((int(len(y_array))))
 
-    x = np.array([1, 2, 3, 4, 5])
-    y = np.array([1.25, 2.4, 3.6, 4.75, 5])
-    n = 4
+    for i in x_array :
+        x = np.append(x, [i])
+    
+    for j in y_array :
+        y = np.append(y, [j])
 
     result = np.polyfit(x,y,n)
 
@@ -36,8 +42,8 @@ def polinomial(x_array, y_array, n) :
 if __name__ == '__main__':
     x = np.array([1.2, 2.5, 3.3, 6.7, 4.5])
     y = np.array([2.5, 2.2, 3.4, 12.8, 7.2])
-    #x = np.array([1, 2, 3, 4, 5])
-    #y = np.array([1.25, 2.4, 3.6, 4.75, 5])
+    x1 = np.array([1, 2, 3, 4, 5])
+    y1 = np.array([1.25, 2.4, 3.6, 4.75, 5])
     print(exponencial(x,y))
-
+    print(polinomial(x1, y1, 4))
 '''
