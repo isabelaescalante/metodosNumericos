@@ -129,8 +129,8 @@ def aExponencial() :
     if not request.json:
         result_code = 400
     else:
-        x = request.json['x']
-        y = request.json['y']
+        x = str(request.json['x'])
+        y = str(request.json['y'])
         #print x_array
         #print y_array
         result = exponencial(x,y)
@@ -143,8 +143,8 @@ def aPolinomial() :
     if not request.json:
         result_code = 400
     else:
-        x = request.json['x']
-        y = request.json['y']
+        x = str(request.json['x'])
+        y = str(request.json['y'])
         n = float(request.json['orden'])
         #print x_array
         #print y_array
