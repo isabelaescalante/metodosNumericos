@@ -3,8 +3,14 @@ import math
 from scipy.optimize import curve_fit
 
 def exponencial(x_array, y_array) :
-    x = np.fromstring(x_array, dtype=float, sep=',')
-    y = np.fromstring(y_array, dtype=float, sep=',')
+    x_string = str(x_array)
+    y_string = str(y_array)
+    print x_string
+    print x_array
+    print type(x_string)
+    x = np.fromstring(x_string, dtype=float, sep=',')
+    print x
+    y = np.fromstring(y_string, dtype=float, sep=',')
 
     popt, pcov = curve_fit(lambda t,a,b: a*np.exp(b*t),  x,  y)
 
@@ -13,9 +19,16 @@ def exponencial(x_array, y_array) :
     return string_result
 
 def polinomial(x_array, y_array, n) :
-    x = np.fromstring(x_array, dtype=float, sep=',')
-    y = np.fromstring(y_array, dtype=float, sep=',')
-
+    x_string = str(x_array)
+    y_string = str(y_array)
+    print x_string
+    print y_string
+    print type(x_string)
+    x = np.fromstring(x_string, dtype=float, sep=',')
+    print x
+    y = np.fromstring(y_string, dtype=float, sep=',')
+    print y
+    
     result = np.polyfit(x,y,n)
 
     final = result.tolist()
@@ -26,12 +39,11 @@ def polinomial(x_array, y_array, n) :
 
     return resultado
     
-'''
+
 if __name__ == '__main__':
     x = "1.2, 2.5, 3.3, 6.7, 4.5"
     y = "2.5, 2.2, 3.4, 12.8, 7.2"
     x1 = "1, 2, 3, 4, 5"
     y1 = "1.25, 2.4, 3.6, 4.75, 5"
     print(exponencial(x,y))
-    print(polinomial(x1, y1, 4))
-'''
+    print(polinomial(x1, y1, 2))

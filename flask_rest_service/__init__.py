@@ -14,7 +14,7 @@ sys.path.insert(0,'..')
 
 from integration import simpson_multiple, simpson_simple
 from interpolation import lagrange
-from linear_systems import gauss_elimination
+from linear_systems import solve_sistema
 from solutions import biseccion, newtonRapson
 from minimos_cuadrados import exponencial, polinomial
 
@@ -82,7 +82,7 @@ def gauss() :
     else:        
         data = request.json
         value = data.get('f')
-        result = gauss_elimination(value)
+        result = solve_sistema(value)
     return jsonify({'result': result}), 201
 
 @app.route('/montante', methods=['POST'])
@@ -92,7 +92,7 @@ def montante() :
     else:        
         data = request.json
         value = data.get('f')
-        result = gauss_elimination(value)
+        result = solve_sistema(value)
 
     return jsonify({'result': result}), 201
 
@@ -132,13 +132,11 @@ def aExponencial() :
     if not request.json:
         result_code = 400
     else:
-        x = request.json['x']
-        y = request.json['y']
-        x_array = map(float, x.split(','))
+        x = str(request.json['x'])
+        y = str(request.json['y'])
         #print x_array
-        y_array = map(float, y.split(','))
         #print y_array
-        result = exponencial(x_array,y_array)
+        result = exponencial(x,y)
         #print result
 
     return jsonify({'result': result}), 201
@@ -148,14 +146,12 @@ def aPolinomial() :
     if not request.json:
         result_code = 400
     else:
-        x = request.json['x']
-        y = request.json['y']
-        n = int(request.json['orden'])
-        x_array = map(float, x.split(','))
+        x = str(request.json['x'])
+        y = str(request.json['y'])
+        n = float(request.json['orden'])
         #print x_array
-        y_array = map(float, y.split(','))
         #print y_array
-        result = polinomial(x_array,y_array,n)
+        result = polinomial(x,y,n)
         #print result
 
     return jsonify({'result': result}), 201

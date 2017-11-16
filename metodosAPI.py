@@ -11,7 +11,7 @@ import numpy as np
 
 from integration import simpson_multiple, simpson_simple
 from interpolation import lagrange
-from linear_systems import gauss_elimination
+from linear_systems import solve_sistema
 from solutions import biseccion, newtonRapson
 from minimos_cuadrados import exponencial, polinomial
 
@@ -79,7 +79,7 @@ def gauss() :
     else:        
         data = request.json
         value = data.get('f')
-        result = gauss_elimination(value)
+        result = solve_sistema(value)
     return jsonify({'result': result}), 201
 
 @app.route('/montante', methods=['POST'])
@@ -89,7 +89,7 @@ def montante() :
     else:        
         data = request.json
         value = data.get('f')
-        result = gauss_elimination(value)
+        result = solve_sistema(value)
 
     return jsonify({'result': result}), 201
 
