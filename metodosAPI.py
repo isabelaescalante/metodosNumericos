@@ -131,9 +131,9 @@ def aExponencial() :
     else:
         x = request.json['x']
         y = request.json['y']
-        x_array = map(float, x.split(','))
+        x_array = list(map(float, x.split(',')))
         #print x_array
-        y_array = map(float, y.split(','))
+        y_array = list(map(float, y.split(',')))
         #print y_array
         result = exponencial(x_array,y_array)
         #print result
@@ -148,9 +148,9 @@ def aPolinomial() :
         x = request.json['x']
         y = request.json['y']
         n = float(request.json['orden'])
-        x_array = map(float, x.split(','))
+        x_array = list(map(float, x.split(',')))
         #print x_array
-        y_array = map(float, y.split(','))
+        y_array = list(map(float, y.split(',')))
         #print y_array
         result = polinomial(x_array,y_array,n)
         #print result
