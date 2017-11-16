@@ -1,8 +1,8 @@
 import numpy as np
 
 def lagrange(x_array, y_array, x_int) :
-    x = x_array
-    y = y_array
+    x = list(x_array)
+    y = list(y_array)
     n = len(x)
     y_int = 0
 
