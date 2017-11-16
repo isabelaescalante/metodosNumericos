@@ -5,11 +5,7 @@ from scipy.optimize import curve_fit
 def exponencial(x_array, y_array) :
     x_string = str(x_array)
     y_string = str(y_array)
-    print x_string
-    print x_array
-    print type(x_string)
     x = np.fromstring(x_string, dtype=float, sep=',')
-    print x
     y = np.fromstring(y_string, dtype=float, sep=',')
 
     popt, pcov = curve_fit(lambda t,a,b: a*np.exp(b*t),  x,  y)
@@ -21,13 +17,9 @@ def exponencial(x_array, y_array) :
 def polinomial(x_array, y_array, n) :
     x_string = str(x_array)
     y_string = str(y_array)
-    print x_string
-    print y_string
-    print type(x_string)
+
     x = np.fromstring(x_string, dtype=float, sep=',')
-    print x
     y = np.fromstring(y_string, dtype=float, sep=',')
-    print y
     
     result = np.polyfit(x,y,n)
 
